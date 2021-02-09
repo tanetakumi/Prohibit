@@ -1,0 +1,62 @@
+# rule 1:Prohibit
+# rule 2:Warning
+
+# target 1:everyone
+# target 2:player
+
+
+creative:
+  - name: "TNT"
+    rule: 1
+    event:
+    target: 1
+    message: "TNTは禁止されています。"
+
+  - name: "LAVA"
+    rule: 2
+    event:
+    target: 1
+    message: "マグマが置かれました"
+
+  - name: "FIRE"
+    rule: 2
+    event:
+    target: 1
+    message: "火が置かれました"
+
+survival:
+  - name: "TNT"
+    rule: 1
+    event:
+    target: 1
+    message: "TNTは禁止されています。"
+
+  - name: "LAVA"
+    rule: 2
+    event:
+    target: 1
+    message: "マグマが置かれました"
+
+  - name: "FIRE"
+    rule: 2
+    event:
+    target: 1
+    message: "火が置かれました"
+
+  - name: "OBSERVER"
+    rule: 1
+    event:
+    target: 2
+    message: "オブザーバーは鯖に常時負荷がかかるので禁止されています。\nご協力をよろしくお願いします。"
+
+  - name: "ITEM_FRAME"
+    rule: 1
+    event:
+    target: 2
+    message: "額縁は鯖に負荷をかけます。\n看板への変更のご協力をよろしくお願いします。"
+
+  - name: "PAINTING"
+    rule: 2
+    event:
+    target: 2
+    message: "絵画は鯖に負荷をかけます。\n基本使用しないようご協力をよろしくお願いします。"

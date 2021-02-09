@@ -1,0 +1,4 @@
+name: Prohibit
+version: ${project.version}
+main: hane.serveron.net.prohibit.Prohibit
+api-version: 1.16
