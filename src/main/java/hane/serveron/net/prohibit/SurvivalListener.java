@@ -10,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.inventory.CraftItemEvent;
+import org.bukkit.event.inventory.InventoryMoveItemEvent;
 import org.bukkit.event.player.PlayerBucketEmptyEvent;
 
 public class SurvivalListener implements Listener {
@@ -38,7 +39,6 @@ public class SurvivalListener implements Listener {
                         "で火をつけました。");
             }
         }
-
     }
 
     @EventHandler
@@ -54,10 +54,13 @@ public class SurvivalListener implements Listener {
             } else if(material == Material.OBSERVER){
                 e.setCancelled(true);
                 player.sendMessage(ChatColor.RED + "オブザーバーはサーバーに常時負荷がかかるので禁止されています。\nご協力をよろしくお願いします。");
+            } else if(material == Material.TNT){
+                e.setCancelled(true);
+                Bukkit.broadcastMessage(ChatColor.RED + player.getName()+"がTNTを作成しようとしました。");
             }
         }
-
     }
+
 
     @EventHandler
     public void onLAVA(PlayerBucketEmptyEvent e) {
@@ -70,8 +73,8 @@ public class SurvivalListener implements Listener {
                 Bukkit.broadcastMessage(ChatColor.RED + e.getPlayer().getName()+"が("+x+","+y+","+z+")でマグマを置きました。");
             }
         }
-
     }
+
 
     @EventHandler
     public void onEntityDeath(EntityDeathEvent e) {
